@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+        }
+        #form-container {
+            text-align: center;
+        }
+        #weather-app-text{
+          text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div id="weather-app-text">
+        <h1>Weather App</h1>
+    </div>
+    <div id="form-container">
+        <form action="/result" method="post">
+            <label for="city">Enter a city:</label>
+            <input type="text" id="city" name="city">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="result"></div>
+</body>
+</html>
