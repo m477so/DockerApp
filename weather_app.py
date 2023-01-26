@@ -1,8 +1,25 @@
 from flask import Flask, render_template, request
 import requests
 from pycountry import countries
+import os
 
-app = Flask(__name__, template_folder='/home/msojka/weatherapp')
+#local
+#app = Flask(__name__, template_folder='/home/msojka/weatherapp')
+
+#test
+#app = Flask(__name__, template_folder='/app/templates')
+
+#test2
+if os.environ.get('DOCKER_ENV'):
+    template_folder='/app/templates'
+else:
+    template_folder='/home/msojka/DockerApp'
+
+app = Flask(__name__, template_folder=template_folder)
+
+
+
+
 
 @app.route("/")
 def weather():
